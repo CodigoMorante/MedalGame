@@ -1,5 +1,5 @@
 //
-//  AppEntryView.swift
+//  RootFlowView.swift
 //  ApuestaTotalTechnicalTest
 //
 //  Created by Christian Morante on 31/10/25.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct AppEntryView: View {
+struct RootFlowView: View {
     @State private var isReady = false
     @ObservedObject var medalsViewModel: MedalsViewModel
         

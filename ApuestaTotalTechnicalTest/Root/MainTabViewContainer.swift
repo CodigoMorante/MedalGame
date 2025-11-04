@@ -12,6 +12,6 @@ struct MainTabViewContainer: View {
 
     var body: some View {
         let viewModel = MedalsModuleBuilder.buildViewModel(context: context)
-        AppEntryView(medalsViewModel: viewModel)
+        RootFlowView(medalsViewModel: viewModel)
     }
 }
