@@ -10,9 +10,10 @@ import SwiftData
 
 struct RootFlowView: View {
     @StateObject var appState = AppState()
-    @ObservedObject var medalsViewModel: MedalsViewModel
-        
+    @Environment(\.modelContext) private var context
+    
     var body: some View {
+        let medalsViewModel = MedalsModuleBuilder.buildViewModel(context: context)
         ZStack {
             if appState.isReady {
                 MainTabView(medalsViewModel: medalsViewModel)

@@ -13,7 +13,7 @@ struct ApuestaTotalTechnicalTestApp: App {
         
     var body: some Scene {
         WindowGroup {
-            MainTabViewContainer()
+            RootFlowView()
                 .modelContainer(for: MedalLocal.self)
         }
     }
