@@ -9,12 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct RootFlowView: View {
-    @State private var isReady = false
+    @StateObject var appState = AppState()
     @ObservedObject var medalsViewModel: MedalsViewModel
         
     var body: some View {
         ZStack {
-            if isReady {
+            if appState.isReady {
                 MainTabView(medalsViewModel: medalsViewModel)
                     .transition(.opacity)
             } else {
@@ -22,13 +22,10 @@ struct RootFlowView: View {
                     .transition(.opacity)
             }
         }
-        .animation(.easeOut(duration: 0.5), value: isReady)
+        .animation(.easeOut(duration: 0.5), value: appState.isReady)
         .task {
             await medalsViewModel.loadMedals()
-            try? await Task.sleep(nanoseconds: 2_000_000_000)
-            withAnimation {
-                isReady = true
-            }
+            await appState.start()
         }
     }
 }
