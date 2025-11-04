@@ -25,7 +25,6 @@ struct AppEntryView: View {
         .animation(.easeOut(duration: 0.5), value: isReady)
         .task {
             await medalsViewModel.loadMedals()
-            await medalsViewModel.startIncrementingMedalPoints()
             try? await Task.sleep(nanoseconds: 2_000_000_000)
             withAnimation {
                 isReady = true

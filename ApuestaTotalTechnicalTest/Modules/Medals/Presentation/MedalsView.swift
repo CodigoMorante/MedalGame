@@ -43,6 +43,9 @@ struct MedalsView: View {
                 }
                 Button("Cancelar", role: .cancel) { }
             }
+            .task {
+                await viewModel.startIncrementingMedalPoints()
+            }
         }
     }
 }
