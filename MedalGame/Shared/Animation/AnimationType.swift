@@ -1,0 +1,14 @@
+//
+//  AnimationType.swift
+//  MedalGame
+//
+//  Created by Christian Morante on 27/10/25.
+//
+
+enum AnimationType: String {
+    case pulse, flash, sparkle, confetti, shine, explosion, bounce, crownBurst, scalePop, rotate
+    
+    init?(from raw: String) {
+        self.init(rawValue: raw)
+    }
+}
