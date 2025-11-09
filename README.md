@@ -1,1 +1,1 @@
-Prueba técnica para el proceso de selección de Apuesta Total
+Juego de autoincremento de las medallas
